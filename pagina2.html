@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Clã Akizuki - Página 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #2c1e3f;
+      background-image: radial-gradient(circle at top, #a78bcc 0%, #2c1e3f 100%);
+      background-size: cover;
+      background-position: center;
+      font-family: 'MedievalSharp', cursive;
+      color: #e0d8f5;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 15vh auto;
+      background: rgba(80, 60, 110, 0.85);
+      padding: 40px;
+      border: 3px solid #c8b5ec;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #d4c1ff;
+    }
+
+    p.enigma {
+      font-size: 1.5rem;
+      line-height: 2;
+      color: #f3ebff;
+      margin-bottom: 2rem;
+    }
+
+    input[type="text"] {
+      width: 60%;
+      padding: 12px;
+      font-size: 1.2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #bda3e3;
+      color: #f0eaff;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      background: #886fb7;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      display: block;
+      margin: 10px auto 0 auto;
+    }
+
+    button:hover {
+      background: #a78bcc;
+    }
+
+    #erro {
+      color: #ffb6c1;
+      font-size: 1rem;
+      margin-top: 10px;
+      word-break: break-word;
+    }
+
+    .vento {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
+      animation: flutuar 20s linear infinite;
+      opacity: 0.06;
+    }
+
+    @keyframes flutuar {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 1000px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="vento"></div>
+
+  <div class="container">
+    <p class="enigma">
+      “Os ventos cortam o clã, a paisagem é bela e calma.”
+    </p>
+
+    <input type="text" id="senha" placeholder="Digite a senha...">
+    <button onclick="verificarSenha()">Acessar</button>
+    <p id="erro"></p>
+  </div>
+
+  <script>
+    function verificarSenha() {
+      const senhaDigitada = document.getElementById('senha').value.trim().toUpperCase();
+      const senhaCorreta = "MONTE HIEI";
+      if (senhaDigitada === senhaCorreta.toUpperCase()) {
+        window.location.href = "pagina3.html";
+      } else {
+        document.getElementById('erro').textContent = 
+        "01010000 01101001 01100011 01101111 01110011 00100000 01100101 00100000 01110110 01100001 01101100 01100101 01110011 00100000 01100001 01101100 01110100 01101111 01110011 00101110 00100000 01000001 01110011 00100000 01100010 01110010 01101001 01110011 01100001 01110011 00100000 01100011 01101111 01101110 01110011 01110100 01100001 01101110 01110100 01100101 01110011 00100000 01100011 01101111 01110010 01110100 01100001 01101101 00100000 01100001 00100000 01100110 01101100 01101111 01110010 01100101 01110011 01110100 01100001 00101100 00100000 01101111 00100000 01100011 01101000 01100101 01101001 01110010 01101111 00100000 01100100 01100101 00100000 01100011 01100101 01100100 01110010 01101111 00100000 01100101 00100000 01100010 01100001 01101101 01100010 01110101 00100000 01110000 01100101 01110010 01100110 01110101 01101101 01100001 00100000 01101111 00100000 01110011 01101111 01110011 01110011 01100101 01100111 01101111 00100000 01100101 00100000 01100001 00100000 01110000 01100001 01111010 00101110 00100000 01010010 01100101 01110110 01101001 01100111 01101111 01110010 01100001 01101110 01110100 01100101 00101110 00100000";
+      }
+    }
+  </script>
+</body>
+</html>
